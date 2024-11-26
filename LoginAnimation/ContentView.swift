@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @FocusState var isActive
+    @State var email = ""
+    @State var password = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(spacing: 45) {
+            InfoTF(title: "Email", text: $email)
+            
+            InfoTF(title: "Password", text: $password)
         }
         .padding()
     }
